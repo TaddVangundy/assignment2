@@ -23,7 +23,10 @@ def argmax(sequence):
         int: The index of the highest value in `sequence`.
 
     """
-    # YOUR CODE HERE
+    def argmax(sequence):
+
+    max_num = max(sequence)
+    return sequence.index(max_num)
 
 
 
@@ -43,7 +46,12 @@ def tokenize(string, lowercase=False):
         list: A list of words.
 
     """
-    # YOUR CODE HERE
+    
+    if lowercase == False:
+        return string.split()
+    elif lowercase == True:
+        lowerString = string.lower()
+        return lowerString.split()
 
 
 def shared_words(text1, text2):
@@ -60,7 +68,27 @@ def shared_words(text1, text2):
         set: A set with words appearing in both `text1` and `text2`.
 
     """
-    # YOUR CODE HERE
+    def shared_words(text1, text2):
+
+    def tokenize(string, lowercase=False):
+        if lowercase == False:
+            return string.split()
+        elif lowercase == True:
+            lowerString = string.lower()
+            return lowerString.split()
+
+    token_text1 = tokenize(text1, True)
+    token_text2 = tokenize(text2, True)
+
+    set_text1 = {token_text1}
+    set_text2 = {token_text2}
+    set_text3 = {}
+
+    for t in set_text1:
+        if t in set_text2:
+            set_text3.update(t)
+
+    return set_text3
 
 
 def shared_words_from_filenames(filename1, filename2):
